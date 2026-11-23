@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html> 
+<head>
+ <title>CALENDAR</title>
+
+
+</head>
+<body>
+<h2>CALENDAR GENERATION</h2>
+
+Enter Year:
+<input type="number" id="year">
+
+<button onclick="generateCalender()">Generate</button>
+
+<div id="calender"></div>
+
+<script>
+    function generateCalender() {
+
+        let year = parseInt(document.getElementById("year").value);
+
+        if (isNaN(year) || year < 1) {
+            alert("Please enter a valid year");
+            return;
+        }
+
+        let output = "";
+
+        for (let m = 0; m < 12; m++) {
+
+            let first = new Date(year, m, 1).getDay();
+            let days = new Date(year, m + 1, 0).getDate();
+
+            output += "<h3>" +
+                new Date(year, m).toLocaleString('default', {month: 'long'}) +
+                " " + year + "</h3>";
+
+            output += "<table><tr>";
+
+            let week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            for (let day of week) {
+                output += "<th>" + day + "</th>";
+            }
+
+            output += "</tr><tr>";
+
+            for (let i = 0; i < first; i++) {
+                output += "<td></td>";
+            }
+
+            for (let date = 1; date <= days; date++) {
+                output += "<td>" + date + "</td>";
+
+                if ((first + date) % 7 == 0 && date != days) {
+                    output += "</tr><tr>";
+                }
+            }
+
+            output += "</tr></table>";
+        }
+
+        document.getElementById("calender").innerHTML = output;
+    }
+</script>
+

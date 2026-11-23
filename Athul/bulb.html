@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html> <head> <title>Bulb ON/OFF</title> </head>
+
+<body>
+
+<h2>Bulb ON/OFF</h2>
+
+<img id="bulb" src="/home/s1mcabatch1/Desktop/Athira/bulb-off.png">
+
+<br><br>
+
+<button id="onbtn" onclick="bulbon()">ON</button>
+<button id="offbtn" onclick="bulboff()">OFF</button>
+
+<script>
+    function bulbon() {
+        document.getElementById("bulb").src =
+            "/home/s1mcabatch1/Desktop/Athira/bulb-on.jpg";
+    }
+
+    function bulboff() {
+        document.getElementById("bulb").src =
+            "/home/s1mcabatch1/Desktop/Athira/bulb-off.png";
+    }
+</script>
+
+
+</body> </html>

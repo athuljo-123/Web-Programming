@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Image Map</title>
+
+    <style>
+        .info {
+            display: none;
+        }
+
+        .info:target {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>PLANT IMAGE MAP</h1>
+
+    <p>Click on the roots, fruits, or leaves.</p>
+
+    <img src="leaves.jpg" usemap="#mymap" width="600" height="400">
+<map name="mymap">
+
+    <!-- Roots: Rectangle -->
+    <area shape="rect"
+          coords="250,280,350,380"
+          href="#roots"
+          alt="Roots">
+
+    <!-- Fruits: Circle -->
+    <area shape="circle"
+          coords="350,150,60"
+          href="#fruits"
+          alt="Fruits">
+
+    <!-- Leaves: Polygon -->
+    <area shape="poly"
+          coords="200,150,150,110,100,130,140,180,190,190"
+          href="#leaves"
+          alt="Leaves">
+
+</map>
+
+    <hr>
+<p> Click any parts.</p>
+    <div id="roots" class="info">
+        <h2>ROOTS</h2>
+       <img src="root1.jpg" width="600" height="400">
+        <p>Roots absorb water and minerals from the soil.</p>
+        <a href="#">Back</a>
+    </div>
+
+    <div id="fruits" class="info">
+        <h2>FRUITS</h2>
+        <p>Fruits contain and protect the seeds of a plant.</p>
+      <img src="fruits1.jpg" width="600" height="400">
+        <a href="#">Back</a>
+    </div>
+
+    <div id="leaves" class="info">
+        <h2>LEAVES</h2>
+     <img src="leaves1.jpg" width="600" height="400">
+        <p>Leaves prepare food through photosynthesis.</p>
+        <a href="#">Back</a>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html> <head> <title>Form Validation</title>
+
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 40px;
+    }
+
+    form {
+        width: 350px;
+        margin: auto;
+        padding: 20px;
+        text-align: left;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+
+    input {
+        width: 95%;
+        padding: 8px;
+        margin: 5px 0 15px;
+    }
+
+    button {
+        padding: 10px;
+        background: blue;
+        color: white;
+        border: none;
+        width: 100%;
+    }
+
+    .error {
+        color: red;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<h2>FORM VALIDATION USING JAVASCRIPT</h2>
+
+<form onsubmit="return validform()">
+
+    Name:
+    <input type="text" id="name">
+    <span id="e1" class="error"></span>
+
+    Mobile:
+    <input type="text" id="mobile">
+    <span id="e2" class="error"></span>
+
+    Email:
+    <input type="text" id="email">
+    <span id="e3" class="error"></span>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+    function validform() {
+        let n = document.getElementById("name").value;
+        let m = document.getElementById("mobile").value;
+        let e = document.getElementById("email").value;
+
+        
+
+        if (n == "" || m== "" || e=="") {
+         alert("All fields are requried.")
+           return  false;
+        }
+
+        if (!/^[0-9]{10}$/.test(m)) {
+             alert( "Enter 10 digit mobile number");
+            return false;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) {
+           alert( "Enter valid email");
+            return false;
+        }
+
+       alert("Form submitted successfully!");
+
+        return false;
+    }
+</script>
+
+
+</body> </html>

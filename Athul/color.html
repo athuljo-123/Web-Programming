@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html> 
+<head>
+ <title>Change the Color of a Web Page</title>
+
+
+</head>
+
+<body>
+
+<h2>MOUSE CLICK EVENTS</h2>
+
+<p>Single Click = Red | Double Click = Green</p>
+
+<button id="bgcolor">Change the background color</button>
+
+<script> 
+document.getElementById("bgcolor").addEventListener("click", function()
+ {
+ document.body.style.backgroundColor = "red";
+ });
+ document.getElementById("bgcolor").addEventListener("dblclick", function()
+ {
+ document.body.style.backgroundColor = "green";
+ }); 
+</script>
+
+</body>
+ </html>
